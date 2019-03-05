@@ -123,6 +123,7 @@ body {
 .chat__messages-inner {
   height: calc(100% - 2px);
   background-color: #FFFFFF;
+  overflow: scroll;
 }
 
 .chat__messages--login {

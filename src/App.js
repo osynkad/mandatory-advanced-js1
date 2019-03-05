@@ -3,25 +3,29 @@ import './App.css';
 import Login from './Login';
 import Chat from './Chat';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {page: 'chat'};
+    this.state = {page: 'login', username: ''};
+  }
+  handleLogin(e) {
+    e.preventDefault();
+    this.setState({page: 'chat'});
+  }
+  handleChange(e) {
+    this.setState({username: e.target.value});
   }
   render() {
     if(this.state.page === 'login') {
       return (
         <div className="App">
-          <div id="root">
-            <div className="content border--1">
-              <header className="header">
-                <span className="header__title">ChatClient</span>
-              </header>
-              <main className="main border--2">
-                <Login/>
-              </main>
-            </div>
+          <div className="content border--1">
+            <header className="header">
+              <span className="header__title">ChatClient</span>
+            </header>
+            <main className="main border--2">
+              <Login handleLogin={this.handleLogin.bind(this)} handleChange={this.handleChange.bind(this)}/>
+            </main>
           </div>
         </div>
       );
@@ -34,7 +38,7 @@ class App extends Component {
                 <span className="header__title">ChatClient</span>
               </header>
               <main className="main border--2">
-                <Chat/>
+                <Chat username={this.state.username}/>
               </main>
             </div>
           </div>
