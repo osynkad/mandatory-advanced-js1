@@ -1,33 +1,200 @@
-.App {
-  text-align: center;
+* {
+  font-family: sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #008081;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100vh;
+  overflow: hidden;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  margin-right: 100px;
+  /*height: 350px;*/
+  width: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  position: absolute;
+  margin: 1px;
+  width: 496px;
+  height: 18px;
+  background: rgb(11,37,107); /*not sure*/
+  background: linear-gradient(90deg, rgba(11,37,107,1) 0%, rgba(166,202,240,1) 100%);
+  z-index: 999;
 }
+
+.header__title {
+  color: #FFFFFF;
+  font-size: 13px;
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.main {
+  position: relative;
+  /*height: 348px;*/
+  width: 498px;
+  background-color: #D4D0C8;
+  box-shadow: 4px 4px 39px -3px rgba(0,0,0,1);
+}
+
+/* LOGIN */
+
+.login {
+  position: relative;
+  top: 31px;
+  padding: 0 110px 0 110px;
+  box-sizing: border-box;
+  width: 472px;
+  height: 160px;
+}
+
+.login__info {
+  font-size: 14px;
+}
+
+.login__username {
+  position: absolute;
+  font-size: 12px;
+  left: 111px;
+  top: 80px;
+}
+
+.login__form {
+  position: absolute;
+  height: 23px;
+  top: 76px;
+  left: 190px;
+}
+
+.login__input-username {
+  height: calc(100% - 4px);
+  padding-left: 2px;
+  outline: none;
+  width: 180px;
+}
+
+.login__btn-login {
+  position: absolute;
+  top: -1px;
+  left: 201px;
+  outline: none;
+  width: 80px;
+  height: 25px;
+  border: 1px solid #000000;
+  background-color: #D4D0C8;
+}
+
+.login__btn--inner-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 21px;
+}
+
+.login__btn-login:active .login__btn--inner-border {
+  border-color: #413F3F #FFFFFF #FFFFFF #413F3F;
+}
+
+/* END OF LOGIN */
+
+/* CHAT */
+
+.chat {
+  position: relative;
+  top: 31px;
+  left: 12px;
+  width: 472px;
+  height: 350px;
+  /*background-color: red;*/
+}
+
+.chat__messages-outer {
+  position: absolute;
+  width: 100%;
+  height: 275px;
+}
+
+.chat__messages-inner {
+  height: calc(100% - 2px);
+  background-color: #FFFFFF;
+}
+
+.chat__messages--login {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 0 6px 2px;
+}
+
+.chat__messages {
+  padding-left: 2px;
+  font-size: 13px;
+}
+
+.chat__form {
+  position: absolute;
+  height: 23px;
+  top: 282px;
+}
+
+.chat__input {
+  height: calc(100% - 4px);
+  padding-left: 2px;
+  outline: none;
+  width: 385px;
+}
+
+.chat__btn-send {
+  outline: none;
+  width: 80px;
+  height: 25px;
+  border: 1px solid #000000;
+  background-color: #D4D0C8;
+  position: absolute;
+  top: -1px;
+  right: -86px;
+}
+
+.chat__btn--inner-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 21px;
+}
+
+.chat__btn-send:active .chat__btn--inner-border {
+  border-color: #413F3F #FFFFFF #FFFFFF #413F3F;
+}
+
+/* END CHAT */
+
+/* BORDERS - 1 is parent to 2 | 4 is parent to 3 */
+
+.border--1 {
+  border: 1px solid;
+  border-color: #D4D0C8 #413F3F #413F3F #D4D0C8;
+}
+
+.border--2 {
+  border: 1px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+}
+
+.border--3 {
+  border: 1px solid;
+  border-color: #413F3F #D4D0C8 #D4D0C8 #413F3F;
+}
+
+.border--4 {
+  border: 1px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+/* END BORDERS */
