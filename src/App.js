@@ -16,35 +16,18 @@ class App extends Component {
     this.setState({username: e.target.value});
   }
   render() {
-    if(this.state.page === 'login') {
-      return (
-        <div className="App">
-          <div className="content border--1">
-            <header className="header">
-              <span className="header__title">Chat</span>
-            </header>
-            <main className="main border--2">
-              <Login handleLogin={this.handleLogin.bind(this)} handleChange={this.handleChange.bind(this)}/>
-            </main>
-          </div>
+    return (
+      <div className="App">
+        <div className="content border--1">
+          <header className="header">
+            <span className="header__title">Chat</span>
+          </header>
+          <main className="main border--2">
+            {(this.state.page === 'login') ? <Login handleLogin={this.handleLogin.bind(this)} handleChange={this.handleChange.bind(this)}/> : <Chat username={this.state.username}/>}
+          </main>
         </div>
-      );
-    } else if(this.state.page === 'chat') {
-      return (
-        <div className="App">
-          <div id="root">
-            <div className="content border--1">
-              <header className="header">
-                <span className="header__title">ChatClient</span>
-              </header>
-              <main className="main border--2">
-                <Chat username={this.state.username}/>
-              </main>
-            </div>
-          </div>
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

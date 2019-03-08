@@ -9,7 +9,7 @@ class Chat extends Component {
     this.state = {messages: []};
   }
 
-  componentWillMount () {
+  componentDidMount () {
     this.socket.on('connect', this.loginMessage.bind(this));
     this.socket.on('messages', this.handleMessages.bind(this));
     this.socket.on('new_message', this.handleNewMessage.bind(this));
@@ -28,9 +28,11 @@ class Chat extends Component {
   }
 
   handleNewMessage(message) {
+    const chatBox = document.querySelector(".chat__messages-inner");
     let arr = this.state.messages;
     arr.push(message);
     this.setState({messages: arr});
+    chatBox.scrollTo(0, chatBox.scrollHeight);
   }
 
   loginMessage() {
