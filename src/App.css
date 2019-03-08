@@ -12,15 +12,17 @@ body {
 }
 
 .content {
+  position: relative;
   margin-right: 100px;
   /*height: 350px;*/
-  width: 500px;
+  width: calc(500px + 200px);
+  /*fixed*/
 }
 
 .header {
   position: absolute;
   margin: 1px;
-  width: 496px;
+  width: calc(100% - 4px);
   height: 18px;
   background: rgb(11,37,107); /*not sure*/
   background: linear-gradient(90deg, rgba(11,37,107,1) 0%, rgba(166,202,240,1) 100%);
@@ -37,7 +39,7 @@ body {
 .main {
   position: relative;
   /*height: 348px;*/
-  width: 498px;
+  /*width: calc(498px + 200px);*/
   background-color: #D4D0C8;
   box-shadow: 4px 4px 39px -3px rgba(0,0,0,1);
 }
@@ -109,21 +111,23 @@ body {
   position: relative;
   top: 31px;
   left: 12px;
-  width: 472px;
-  height: 350px;
+  width: calc(472px + 200px);
+  height: calc(350px + 100px);
   /*background-color: red;*/
 }
 
 .chat__messages-outer {
   position: absolute;
   width: 100%;
-  height: 275px;
+  height: calc(275px + 100px);
 }
 
 .chat__messages-inner {
   height: calc(100% - 2px);
   background-color: #FFFFFF;
   overflow: scroll;
+  overflow-x: hidden;
+  word-break: break-all;
 }
 
 .chat__messages--login {
@@ -141,14 +145,14 @@ body {
 .chat__form {
   position: absolute;
   height: 23px;
-  top: 282px;
+  top: calc(282px + 100px);
 }
 
 .chat__input {
   height: calc(100% - 4px);
   padding-left: 2px;
   outline: none;
-  width: 385px;
+  width: calc(385px + 200px);
 }
 
 .chat__btn-send {

@@ -10,7 +10,7 @@ class App extends Component {
   }
   handleLogin(e) {
     e.preventDefault();
-    this.setState({page: 'chat'});
+    (/^[\wåäöÅÄÖ\d\s-]{1,12}$/.test(this.state.username)) ? this.setState({page: 'chat'}) : this.setState({page: 'login'});
   }
   handleChange(e) {
     this.setState({username: e.target.value});
@@ -21,7 +21,7 @@ class App extends Component {
         <div className="App">
           <div className="content border--1">
             <header className="header">
-              <span className="header__title">ChatClient</span>
+              <span className="header__title">Chat</span>
             </header>
             <main className="main border--2">
               <Login handleLogin={this.handleLogin.bind(this)} handleChange={this.handleChange.bind(this)}/>
