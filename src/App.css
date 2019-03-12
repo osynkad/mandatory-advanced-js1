@@ -14,9 +14,7 @@ body {
 .content {
   position: relative;
   margin-right: 100px;
-  /*height: 350px;*/
-  width: calc(500px + 200px);
-  /*fixed*/
+  width: calc(100% - 74px);
 }
 
 .header {
@@ -36,10 +34,19 @@ body {
   font-weight: bold;
 }
 
+.header__exit {
+  position: absolute;
+  padding-top: 1px;
+  height: 15px;
+  width: 15px;
+  top: 1px;
+  right: 0;
+  outline: none;
+  background-image: url(./images/exit.png);
+}
+
 .main {
   position: relative;
-  /*height: 348px;*/
-  /*width: calc(498px + 200px);*/
   background-color: #D4D0C8;
   box-shadow: 4px 4px 39px -3px rgba(0,0,0,1);
 }
@@ -113,7 +120,6 @@ body {
   left: 12px;
   width: calc(472px + 200px);
   height: calc(350px + 100px);
-  /*background-color: red;*/
 }
 
 .chat__messages-outer {

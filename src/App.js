@@ -15,12 +15,16 @@ class App extends Component {
   handleChange(e) {
     this.setState({username: e.target.value});
   }
+  handleLogout(e) {
+    this.setState({page: 'login'});
+  }
   render() {
     return (
       <div className="App">
         <div className="content border--1">
           <header className="header">
             <span className="header__title">Chat</span>
+            <button className="header__exit" onClick={this.handleLogout.bind(this)}>&nbsp;</button>
           </header>
           <main className="main border--2">
             {(this.state.page === 'login') ? <Login handleLogin={this.handleLogin.bind(this)} handleChange={this.handleChange.bind(this)}/> : <Chat username={this.state.username}/>}
