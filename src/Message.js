@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Emoji from './list_emojis';
+import Linkify from '../node_modules/react-linkify'
 
 class Message extends Component {
   render() {
@@ -16,9 +17,9 @@ class Message extends Component {
       return <span className="chat__messages" key={message.id}>[{new Date(message.timestamp).toLocaleTimeString('sv-SE')}] &lt;{message.username}&gt; {message.content}<br/></span>;
     })
     return (
-      <>
+      <Linkify>
         {messages}
-      </>
+      </Linkify>
     );
   }
 }

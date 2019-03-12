@@ -17,10 +17,12 @@ class Chat extends Component {
 
   sendMessage(e) {
     e.preventDefault();
-    this.socket.emit('message', {username: this.props.username, content: e.target.children[0].value}, (response) => {
-      this.handleNewMessage(response.data.newMessage);
-    })
-    e.target.children[0].value = "";
+    if (e.target[0].value.length > 1 && e.target[0].value.length < 200) {
+      this.socket.emit('message', {username: this.props.username, content: e.target.children[0].value}, (response) => {
+        this.handleNewMessage(response.data.newMessage);
+      })
+      e.target.children[0].value = "";
+    }
   }
 
   handleMessages(messages) {
