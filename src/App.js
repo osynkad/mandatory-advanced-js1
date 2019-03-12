@@ -10,7 +10,7 @@ class App extends Component {
   }
   handleLogin(e) {
     e.preventDefault();
-    (/^[\wåäöÅÄÖ\d\s-]{1,12}$/.test(this.state.username)) ? this.setState({page: 'chat'}) : this.setState({page: 'login'});
+    (/^[^\s][\wåäöÅÄÖ\d\s-]{1,12}$/.test(this.state.username)) ? this.setState({page: 'chat'}) : this.setState({page: 'login'});
   }
   handleChange(e) {
     this.setState({username: e.target.value});
